@@ -3,22 +3,22 @@
 ![npm](https://img.shields.io/npm/dt/mira-db)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
- Customized (NIST) Time Service based simple one time password genaretor
+ (NIST) Time Service based simple one time password genaretor 
+ 
  ## token generation
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
+### What makes NodeAuth different?
+* Fully customizable
+* Multiple NIST server synchronization.
+* Simple and fast token generation and also no dependencies other 3rd packages.
 
 
-```mermaid
-graph LR
-B[Date Time]  --> A[Client Secret]
-B -- Number --> F(Convert to Number)
-W(Expiration) --> A
-A --> G[Convert to Hash]
-D{NIST Internet Time Service} -- synchronization --> B
-G -- md5 --> F 
-F --> E(Authentication Generate)
-H(Prefix) --> E
+
+## Install 
+ (es5,6) Typescript
+```bash
+ npm install nodeauth2 --save
 ```
 
    [npm-image]: https://img.shields.io/npm/v/mira-db.svg?style=flat 

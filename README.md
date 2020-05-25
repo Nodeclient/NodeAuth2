@@ -10,7 +10,7 @@
 
 
 ### What makes NodeAuth different?
-* Fully customizable (Token expiration time , prefix , length , custom nist server)
+* Fully customizable (Token expiration time , prefix , length , custom services)
 * Your multiple (NIST) server synchronization.
 * Simple algorithm and fast token generation 
 * No dependencies other 3rd packages.

@@ -3,7 +3,7 @@
 ![npm](https://img.shields.io/npm/dt/mira-db)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
- (STOTP) Server Time Protocol based simple one time password genaretor 
+ (DOTP) Daytime Protocol based simple one time password genaretor 
  
  ## na2 - token generation
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
@@ -15,9 +15,10 @@
 * Simple algorithm and fast token generation 
 * No dependencies other 3rd packages.
 
-
+ Code             : Node.Js , Typescript, (es5,6)
+ Daytime Protocol : https://tools.ietf.org/html/rfc867
+ 
 ## Install 
- (es5,6) Typescript
 ```bash
  npm install nodeauth2 --save
 ```

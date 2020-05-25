@@ -5,7 +5,7 @@
 
  (TSOTP) Time Service based simple one time password genaretor 
  
- ## token generation
+ ## na2 - token generation
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
 ### What makes NodeAuth different?

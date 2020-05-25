@@ -8,11 +8,12 @@
  ## na2 - token generation
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
-### What makes NodeAuth different?
-* Fully customizable
-* Multiple NIST server synchronization.
-* Simple and fast token generation and also no dependencies other 3rd packages.
 
+### What makes NodeAuth different?
+* Fully customizable (Token Expiration time , prefix , length)
+* Your multiple (NIST) server synchronization.
+* Simple algorithm and fast token generation 
+* No dependencies other 3rd packages.
 
 
 ## Install 

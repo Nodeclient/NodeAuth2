@@ -1,6 +1,6 @@
 # NodeAuth2
 ![npm-image]
-![npm](https://img.shields.io/npm/dt/mira-db)
+![npm](https://img.shields.io/npm/dt/nodeauth2)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
  (DOTP) Time Services based simple one time password genaretor 
@@ -53,5 +53,5 @@ NodeAuth2.AuthCheck("this is your secret pass phrase","123-456").then(g=>{
 ``` 
 
 
-   [npm-image]: https://img.shields.io/npm/v/mira-db.svg?style=flat 
-   [npm-url]: https://npmjs.org/package/mira-db  
+   [npm-image]: https://img.shields.io/npm/v/nodeauth2.svg?style=flat 
+   [npm-url]: https://npmjs.org/package/nodeauth2 

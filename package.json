@@ -1,7 +1,7 @@
 {
-  "name": "node-auth",
-  "version": "1.0.0",
-  "description": "",
+  "name": "nodeauth2",
+  "version": "1.0.1",
+  "description": "Time Services based simple one time password genaretor.",
   "main": "index.js",
   "scripts": {
     "ts": "ts-node src/index.ts",
@@ -9,11 +9,15 @@
     "dev": "nodemon src/index.ts",
     "build":"tsc -p ."
   },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/Nodeclient/NodeAuth2"
+  },
   "keywords": [
-    "auth"
+    "auth","custom otp","password","generate"
   ],
   "author": "Leo Zacharry",
-  "license": "ISC",
+  "license": "LGPL",
   "devDependencies": {
     "@types/node": "^14.0.4"
   }

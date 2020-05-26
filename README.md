@@ -55,7 +55,7 @@ Na2 {
 
 ### Check one time token 
 ```js
-NodeAuth2.AuthCheck("this is your secret pass phrase","123-456").then(g=>{
+NodeAuth2.AuthCheck("this is your secret pass phrase","524226").then(g=>{
  console.log("Na2", g);
 }) 
 ``` 

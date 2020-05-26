@@ -50,7 +50,7 @@ class PSTYPE {
 }
 class AuthTimeZones {
     constructor() {
-        this.tmo = 0x12c;
+        this.tmo = 0x1f4;
         this.tzc = 0x0;
     }
     set SET__TZ(z) {
@@ -60,33 +60,45 @@ class AuthTimeZones {
         return this.tzc;
     }
     set SET_PING_TIME_OUT(setNewtime) {
-        this.tmo = setNewtime >= 0xc8 ? setNewtime : 0xfa;
+        this.tmo = setNewtime >= 0x1f4 ? setNewtime : 0x1f4;
     }
     Network(call) {
         return __awaiter(this, void 0, void 0, function* () {
+            let isTry = false;
             const ping = new net.Socket();
             const localtime = new Date().valueOf();
-            const Synchronize = Array.isArray(String(process.env.TIME_SERVICE).split(",")) ? String(process.env.TIME_SERVICE).replace(/\s/g, "").split(",") : ["time.nist.gov"];
+            const Synchronize = (process.env.TIME_SERVICE) ? Array.isArray(String(process.env.TIME_SERVICE).split(",")) ? String(process.env.TIME_SERVICE).replace(/\s/g, "").split(",") : ["127.0.0.1"] : ["127.0.0.1"];
             let PST = yield new PSTYPE(0x64);
-            let Checking = 0;
+            let Checking = 0, waitOut = 0;
             let nSync = setInterval(() => {
-                ping.connect(0xd, Synchronize[Checking]);
+                (isTry) ? PST.SET_PING_SID = 0x82 : ping.connect(0xd, Synchronize[Checking]);
                 if (PST.GET_PING_SID == 0x64) {
+                    isTry = true;
+                    Checking++;
                     ping.on('data', function (data) {
                         let d = String(data).match(/\d+/g);
                         const UTCL = new Date();
                         let UTCR = String(UTCL.getFullYear()).concat("-").concat(d[0x2]).concat("-").concat(d[0x3]).concat("T").concat(d[0x4]).concat(":").concat(d[0x5]).concat(":").concat(d[0x6]);
                         const UTCB = new Date(UTCR).valueOf();
-                        PST.SET_PING_SID = 0x1;
                         clearInterval(nSync);
-                        call(100, String(UTCB).length >= 0xa ? String(UTCB).slice(0x0, 0xa) : localtime);
                         ping.destroy();
+                        call(100, String(UTCB).length >= 0xa ? String(UTCB).slice(0x0, 0xa) : localtime);
                     }).on('error', function (e) {
-                        Checking > Synchronize.length ? PST.SET_PING_SID = 0x78 : PST.SET_PING_SID = 0x64;
-                        Checking++;
+                        isTry = false;
+                        (Checking > Synchronize.length - 1) ? PST.SET_PING_SID = 0x78 : PST.SET_PING_SID = 0x64;
                     });
                 }
+                else if (PST.GET_PING_SID == 0x82) {
+                    if (waitOut >= 0x2) {
+                        isTry = false;
+                        PST.SET_PING_SID = 0x64;
+                    }
+                    else {
+                        waitOut++;
+                    }
+                }
                 else if (PST.GET_PING_SID == 0x78) {
+                    Checking = 0;
                     clearInterval(nSync);
                     call(120, String(localtime).slice(0x0, 0xa));
                 }

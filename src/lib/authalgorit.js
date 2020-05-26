@@ -78,7 +78,6 @@ class AutHash {
 }
 class AuthSetting {
     constructor() {
-        this.ns = String(process.env.TIME_SERVICE || 'time.nist.gov');
         this.pr = String(process.env.TOKEN_PREFIX || "-");
         this.ml = Number(process.env.TOKEN_LENGTH || 0x7) >= 0x4 ? Number(process.env.TOKEN_LENGTH) : 0x4;
     }

@@ -1,6 +1,6 @@
 {
   "name": "nodeauth2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Time Services based simple one time password genaretor.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "auth","custom otp","password","generate"
   ],
   "author": "Leo Zacharry",
-  "license": "LGPL v3",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.0.4"
   }

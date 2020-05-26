@@ -5,7 +5,6 @@ interface GenParams {
 declare class AuthSetting {
     private pr;
     private ml;
-    private ns;
     constructor();
     set setPrefix(prefixChar: string);
     set setLength(Maxlength: number);

@@ -1,5 +1,5 @@
 # NodeAuth2 (Alpha 1.0)
-![npm-image]
+[![NPM version][npm-image]][npm-url]
 ![npm](https://img.shields.io/npm/dt/nodeauth2)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
@@ -50,5 +50,5 @@ NodeAuth2.AuthCheck("this is your secret pass phrase","123-456").then(g=>{
 }) 
 ``` 
 
-   [npm-image]: https://img.shields.io/npm/v/nodeauth2.svg?style=flat 
-   [npm-url]: https://npmjs.org/package/nodeauth2 
+ [npm-image]: https://img.shields.io/npm/v/nodeauth2.svg?style=flat 
+ [npm-url]: https://npmjs.org/package/nodeauth2 

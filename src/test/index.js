@@ -22,19 +22,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /*
     Expiration Time (Second) Types <number>
     Secret Code Types <string>
-    Code : (100 New Token),(101 Already Generated),(102 Expired)
+    Message : (100 New Token),(101 Already Generated),(102 Expired)
 */
 process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)
 process.env.TOKEN_PREFIX = "-"; // Custom prefix (-)
 process.env.TIME_SERVICE = "127.0.0.1 , time.nist.gov";
 const na2 = __importStar(require("../lib/authentication"));
 const NodeAuth2 = new na2.Authentication(20); // Token Expiration Time 20 sec
-/*
-    NodeAuth2.AuthCheck("this is your secret pass phrase","123-456").then(g=>{
-        console.log("Na2", g);
-    })
-
-    NodeAuth2.AuthGenerate("this is your secret pass phrase").then(g => {
-        console.log("Na2", g);
-    });
-*/
+/* GENERATE */
+//NodeAuth2.AuthGenerate("this is your secret pass phrase").then(g => {
+//  console.log("Na2", g);
+//}); 
+/* CHECK */
+// NodeAuth2.AuthCheck("this is your secret pass phrase","123-456").then(g=>{
+//   console.log("Na2", g);
+// })  

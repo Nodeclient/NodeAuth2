@@ -17,7 +17,7 @@
     "auth","custom otp","password","generate"
   ],
   "author": "Leo Zacharry",
-  "license": "LGPL",
+  "license": "LGPL v3",
   "devDependencies": {
     "@types/node": "^14.0.4"
   }

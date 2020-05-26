@@ -50,7 +50,7 @@ class PSTYPE {
 }
 class AuthTimeZones {
     constructor() {
-        this.tmo = 0x3e8;
+        this.tmo = 0x12c;
         this.tzc = 0x0;
     }
     set SET__TZ(z) {
@@ -60,7 +60,7 @@ class AuthTimeZones {
         return this.tzc;
     }
     set SET_PING_TIME_OUT(setNewtime) {
-        this.tmo = setNewtime >= 0x1f4 ? setNewtime : 0x1f4;
+        this.tmo = setNewtime >= 0xc8 ? setNewtime : 0xfa;
     }
     Network(call) {
         return __awaiter(this, void 0, void 0, function* () {

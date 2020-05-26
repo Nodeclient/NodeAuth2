@@ -31,7 +31,7 @@ class Authentication {
         const AuthNumber = (Token = String(Token).replace(/\D/g, '')) || 0x0;
         const _arr = [];
         const auTZ = new ad.AuthTimeZones;
-        auTZ.SET_PING_TIME_OUT = 0x12c;
+        auTZ.SET_PING_TIME_OUT = 0xc8;
         return new Promise((res) => {
             let CALL_PING = (ID, TZ_TIME) => {
                 auTZ.SET__TZ = TZ_TIME;

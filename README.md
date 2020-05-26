@@ -50,5 +50,5 @@ NodeAuth2.AuthCheck("this is your secret pass phrase","123-456").then(g=>{
 }) 
 ``` 
 
-   [npm-image]: https://img.shields.io/npm/v/nodeauth2.svg?style=flat 
-   [npm-url]: https://npmjs.org/package/nodeauth2 
+ [npm-image]: https://img.shields.io/npm/v/nodeauth2.svg?style=flat 
+ [npm-url]: https://npmjs.org/package/nodeauth2 

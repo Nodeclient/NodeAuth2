@@ -15,7 +15,7 @@
 * Simple algorithm and fast token generation 
 * No dependencies other 3rd packages.
 
- > Code             : Node.Js , Typescript, (es5,6)
+ > Build            : Node.Js , Typescript, (es5,6)
 
  > Daytime Protocol : https://tools.ietf.org/html/rfc867
  
@@ -25,11 +25,11 @@
  npm install nodeauth2 --save
 ```
 ```js
-     /* 
-         Expiration Time (Second) Types <number>
-         Secret Code Types <string> 
-         Message : (100 New Token),(101 Already Generated),(102 Expired)
-     */
+    /* 
+      Expiration Time (Second) Types <number>
+      Secret Code Types <string> 
+      Code : (100 New Token),(101 Already Generated),(102 Expired)
+    */
     process.env.TOKEN_LENGTH = "6"   // Token length [123456] Min(4) ~ Max(32)
     process.env.TOKEN_PREFIX = "-" // Custom prefix (-)
     process.env.TIME_SERVICE = "127.0.0.1 , time.nist.gov , time.example.com" // Daytime services

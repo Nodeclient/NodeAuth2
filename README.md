@@ -11,13 +11,12 @@
 
 ### What makes NodeAuth different?
 * Fully customizable (Token expiration time , prefix , length , custom services)
-* Your multiple (NIST) server synchronization.
+* Multiple (daytime,nist) service synchronization.
 * Simple algorithm and fast token generation 
 * No dependencies other 3rd packages.
 
- Code             : Node.Js , Typescript, (es5,6)
- 
- Daytime Protocol : https://tools.ietf.org/html/rfc867
+ > Code             : Node.Js , Typescript, (es5,6)
+ > Daytime Protocol : https://tools.ietf.org/html/rfc867
  
  
 ## Install 

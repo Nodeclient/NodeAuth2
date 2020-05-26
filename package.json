@@ -1,0 +1,20 @@
+{
+  "name": "node-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ts": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build":"tsc -p ."
+  },
+  "keywords": [
+    "auth"
+  ],
+  "author": "Leo Zacharry",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.4"
+  }
+}

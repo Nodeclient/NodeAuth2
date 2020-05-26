@@ -30,7 +30,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthTimeZones = void 0;
 const net = __importStar(require("net"));
-const al = __importStar(require("./authalgorit"));
 class PSTYPE {
     constructor(str) {
         this.status = str;
@@ -51,40 +50,45 @@ class PSTYPE {
 }
 class AuthTimeZones {
     constructor() {
-        this.tmo = 1000;
-        this.maxLength = 10;
+        this.tmo = 0x3e8;
+        this.tzc = 0x0;
+    }
+    set SET__TZ(z) {
+        this.tzc = z >= 0x0 ? z : 0x0;
+    }
+    get GET__TZ() {
+        return this.tzc;
     }
     set SET_PING_TIME_OUT(setNewtime) {
-        this.tmo = setNewtime >= 500 ? setNewtime : 500;
+        this.tmo = setNewtime >= 0x1f4 ? setNewtime : 0x1f4;
     }
     Network(call) {
         return __awaiter(this, void 0, void 0, function* () {
+            const ping = new net.Socket();
             const localtime = new Date().valueOf();
-            let _z = new al.AutZlib("hex");
-            const PLS = _z.unZobject("789c8b562ac9cc4dd5cbcb2c2ed14bcf2f53d201f375137593b088a5238b959618ea82f526e7e7e41725a6e4eba5a69442c5cbcbcb104a6301b464222f");
-            let PST = yield new PSTYPE("100");
+            const Synchronize = Array.isArray(String(process.env.TIME_SERVICE).split(",")) ? String(process.env.TIME_SERVICE).replace(/\s/g, "").split(",") : ["time.nist.gov"];
+            let PST = yield new PSTYPE(0x64);
             let Checking = 0;
-            let NetworkPing = setInterval(() => {
-                const client = new net.Socket();
-                client.connect(13, PLS[Checking]);
-                if (PST.GET_PING_SID == "100") {
-                    client.on('data', function (data) {
+            let nSync = setInterval(() => {
+                ping.connect(0xd, Synchronize[Checking]);
+                if (PST.GET_PING_SID == 0x64) {
+                    ping.on('data', function (data) {
                         let d = String(data).match(/\d+/g);
                         const UTCL = new Date();
-                        let UTCR = String(UTCL.getFullYear()).concat("-").concat(d[2]).concat("-").concat(d[3]).concat("T").concat(d[4]).concat(":").concat(d[5]).concat(":").concat(d[6]);
+                        let UTCR = String(UTCL.getFullYear()).concat("-").concat(d[0x2]).concat("-").concat(d[0x3]).concat("T").concat(d[0x4]).concat(":").concat(d[0x5]).concat(":").concat(d[0x6]);
                         const UTCB = new Date(UTCR).valueOf();
-                        PST.SET_PING_SID = "1";
-                        clearInterval(NetworkPing);
-                        call(100, String(UTCB).length >= 10 ? String(UTCB).slice(0, 10) : localtime);
-                        client.destroy();
+                        PST.SET_PING_SID = 0x1;
+                        clearInterval(nSync);
+                        call(100, String(UTCB).length >= 0xa ? String(UTCB).slice(0x0, 0xa) : localtime);
+                        ping.destroy();
                     }).on('error', function (e) {
-                        Checking > PLS.length ? PST.SET_PING_SID = "120" : PST.SET_PING_SID = "100";
+                        Checking > Synchronize.length ? PST.SET_PING_SID = 0x78 : PST.SET_PING_SID = 0x64;
                         Checking++;
                     });
                 }
-                else if (PST.GET_PING_SID == "120") {
-                    clearInterval(NetworkPing);
-                    call(120, String(localtime).slice(0, 10));
+                else if (PST.GET_PING_SID == 0x78) {
+                    clearInterval(nSync);
+                    call(120, String(localtime).slice(0x0, 0xa));
                 }
             }, this.tmo);
         });

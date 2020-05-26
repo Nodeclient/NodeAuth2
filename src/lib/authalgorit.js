@@ -29,57 +29,58 @@ class AutHash {
     get data() {
         return String(crypto.createHash('MD5').update(this.Origin).digest("hex")).toLowerCase();
     }
-    get ldb() {
+    get cdb() {
         return {
-            "a": 1,
-            "b": 2,
-            "c": 3,
-            "d": 4,
-            "e": 5,
-            "f": 6,
-            "g": 7,
-            "h": 8,
-            "i": 9,
-            "j": 0,
-            "@": 1,
-            "l": 2,
-            "m": 3,
-            "p": 4,
-            "s": 1,
-            "t": 2,
-            "u": 3,
-            "v": 4,
-            "w": 5,
-            "x": 6,
-            "y": 7,
-            "z": 8,
-            "1": 9,
-            "2": 0,
-            " ": 1,
-            "4": 2,
-            "n": 3,
-            "o": 4,
-            "5": 1,
-            "6": 2,
-            "7": 3,
-            "8": 4,
-            "9": 5,
-            "0": 6,
-            "q": 7,
-            "r": 8,
-            "3": 9,
-            "k": 0,
-            "_": 1,
-            "=": 2,
-            ".": 3,
-            "-": 4
+            "a": 0x1,
+            "b": 0x2,
+            "c": 0x3,
+            "d": 0x4,
+            "e": 0x5,
+            "f": 0x6,
+            "g": 0x7,
+            "h": 0x8,
+            "i": 0x9,
+            "j": 0x0,
+            "@": 0x1,
+            "l": 0x2,
+            "m": 0x3,
+            "p": 0x4,
+            "s": 0x1,
+            "t": 0x2,
+            "u": 0x3,
+            "v": 0x4,
+            "w": 0x5,
+            "x": 0x6,
+            "y": 0x7,
+            "z": 0x8,
+            "1": 0x9,
+            "2": 0x0,
+            " ": 0x1,
+            "4": 0x2,
+            "n": 0x3,
+            "o": 0x4,
+            "5": 0x1,
+            "6": 0x2,
+            "7": 0x3,
+            "8": 0x4,
+            "9": 0x5,
+            "0": 0x6,
+            "q": 0x7,
+            "r": 0x8,
+            "3": 0x9,
+            "k": 0x0,
+            "_": 0x1,
+            "=": 0x2,
+            ".": 0x3,
+            "-": 0x4
         };
     }
 }
 class AuthSetting {
     constructor() {
+        this.ns = String(process.env.TIME_SERVICE || 'time.nist.gov');
         this.pr = String(process.env.TOKEN_PREFIX || "-");
-        this.ml = Number(process.env.TOKEN_LENGTH || 7);
+        this.ml = Number(process.env.TOKEN_LENGTH || 0x7) >= 0x4 ? Number(process.env.TOKEN_LENGTH) : 0x4;
     }
     set setPrefix(prefixChar) {
         this.pr = prefixChar;
@@ -105,10 +106,10 @@ class AuthCrypt extends AuthSetting {
         let _m = new AutHash(txc);
         let _h = [];
         for (const e in _m.data) {
-            _h.push(_m.ldb[_m.data[e]]);
+            _h.push(_m.cdb[_m.data[e]]);
         }
         const gn = _h.join("");
-        const px = String(gn).substring(0, 3).concat(this.getPrefix).concat(String(gn).substring(3, this.getLength));
+        const px = String(gn).substring(0, 0x3).concat(this.getPrefix).concat(String(gn).substring(0x3, this.getLength));
         const nb = String(gn).substring(0, this.getLength);
         return {
             Number: nb,
@@ -125,7 +126,7 @@ class AutZlib {
         return zlib.deflateSync(input).toString(this.encodetype);
     }
     unZobject(input) {
-        return eval(zlib.inflateSync(Buffer.from(input, this.encodetype)).toString());
+        return (zlib.inflateSync(Buffer.from(input, this.encodetype)).toString());
     }
 }
 exports.AutZlib = AutZlib;

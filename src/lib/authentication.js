@@ -23,16 +23,18 @@ exports.Authentication = void 0;
 const ad = __importStar(require("./authtz"));
 const al = __importStar(require("./authalgorit"));
 class Authentication {
-    constructor(Expire) {
-        this.ExTime = Expire;
+    constructor(Expiration) {
+        this.ExTime = Expiration;
         this.AuthMap = new Map();
     }
-    Check(SecretKey, AuthNumber) {
+    AuthCheck(SecretKey, Token) {
+        const AuthNumber = (Token = String(Token).replace(/\D/g, '')) || 0x0;
         const _arr = [];
         const auTZ = new ad.AuthTimeZones;
-        auTZ.SET_PING_TIME_OUT = 300;
+        auTZ.SET_PING_TIME_OUT = 0x12c;
         return new Promise((res) => {
             let CALL_PING = (ID, TZ_TIME) => {
+                auTZ.SET__TZ = TZ_TIME;
                 if (!this.AuthMap.get(SecretKey) || false) {
                     let _g = parseInt(TZ_TIME);
                     for (let i = Number(0); i < Number(this.ExTime) + 1; i++) {
@@ -58,7 +60,7 @@ class Authentication {
                         _g += 1;
                     }
                 }
-                let authStatus = _arr.indexOf(AuthNumber) >= 0 ? true : false;
+                let authStatus = _arr.indexOf(AuthNumber) >= 0x0 ? true : false;
                 res({
                     status: authStatus,
                     auth: AuthNumber,
@@ -68,9 +70,9 @@ class Authentication {
             typeof this.AuthMap.get(SecretKey) == "undefined" ? auTZ.Network(CALL_PING) : CALL_PING(0, this.AuthMap.get(SecretKey));
         });
     }
-    AuthToken(SecretKey) {
+    AuthGenerate(SecretKey) {
         const auTZ = new ad.AuthTimeZones;
-        auTZ.SET_PING_TIME_OUT = 300;
+        auTZ.SET_PING_TIME_OUT = 0x12c;
         return new Promise((auRes) => {
             let CALL_AUTH = (ID, TZ_TIME) => {
                 if (!this.AuthMap.get(SecretKey) || false) {
@@ -81,8 +83,8 @@ class Authentication {
                     auRes({
                         token_prefix: newACT.AuthGen.Prefix,
                         token_number: newACT.AuthGen.Number,
-                        message: "TOKEN",
-                        expire: TimeLeft + "s"
+                        message: 100,
+                        expiration: TimeLeft + "s"
                     });
                 }
                 else if (this.AuthMap.get(SecretKey) <= TZ_TIME) {
@@ -92,18 +94,17 @@ class Authentication {
                     auRes({
                         token_prefix: newACT.AuthGen.Prefix,
                         token_number: newACT.AuthGen.Number,
-                        message: "NEW-TOKEN",
-                        expire: this.ExTime + "s"
+                        message: 102,
+                        expiration: this.ExTime + "s"
                     });
                 }
                 else {
                     const newACT = new al.AuthCrypt(SecretKey, this.AuthMap.get(SecretKey));
-                    const TimeLeft = parseInt(this.AuthMap.get(SecretKey)) - parseInt(TZ_TIME);
                     auRes({
                         token_prefix: newACT.AuthGen.Prefix,
                         token_number: newACT.AuthGen.Number,
-                        message: "TOKEN",
-                        expire: TimeLeft + "s"
+                        message: 101,
+                        expiration: this.ExTime + "s"
                     });
                 }
             };

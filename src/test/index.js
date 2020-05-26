@@ -19,24 +19,22 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-
 /*
-    Expire Time (Second) Types <number>
+    Expiration Time (Second) Types <number>
     Secret Code Types <string>
+    Code : (100 New Token),(101 Already Generated),(102 Expired)
 */
-
-    process.env.TOKEN_LENGTH = "6";
-    process.env.TOKEN_PREFIX = "(your.com)";
-    const na = __importStar(require("../lib/authentication"));
-    const NodeAuth = new na.Authentication(25);// Token Expire 25 second
-
-    NodeAuth.AuthToken("this is my very secret phase").then(g => {
-        console.log("NodeAuth.generate", g);
-    });
-
-/*  
-    NodeAuth.Check("this is my very secret phase","242950").then(g=>{
-        console.log("NodeAuth.check", g);
+process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)
+process.env.TOKEN_PREFIX = "-"; // Custom prefix (-)
+process.env.TIME_SERVICE = "127.0.0.1 , time.nist.gov";
+const na2 = __importStar(require("../lib/authentication"));
+const NodeAuth2 = new na2.Authentication(20); // Token Expiration Time 20 sec
+/*
+    NodeAuth2.AuthCheck("this is your secret pass phrase","123-456").then(g=>{
+        console.log("Na2", g);
     })
 
+    NodeAuth2.AuthGenerate("this is your secret pass phrase").then(g => {
+        console.log("Na2", g);
+    });
 */

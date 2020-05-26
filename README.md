@@ -3,7 +3,7 @@
 ![npm](https://img.shields.io/npm/dt/mira-db)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
- (DOTP) Daytime Protocol based simple one time password genaretor 
+ (DOTP) Time Services based simple one time password genaretor 
  
  ## na2 - token generation
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
@@ -32,7 +32,7 @@
      */
     process.env.TOKEN_LENGTH = "6"   // Token length [123456] Min(4) ~ Max(32)
     process.env.TOKEN_PREFIX = "-" // Custom prefix (-)
-    process.env.TIME_SERVICE = "127.0.0.1 , time.nist.gov , time.example.com" //daytime services
+    process.env.TIME_SERVICE = "127.0.0.1 , time.nist.gov , time.example.com" // Daytime services
     
  import * as na2 from "../lib/authentication";
  const NodeAuth2 = new na2.Authentication(20); // Token Expiration Time 20 sec

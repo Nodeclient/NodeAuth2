@@ -1,7 +1,6 @@
 # NodeAuth2 (Alpha 1.0)
-![npm-image]
-![npm](https://img.shields.io/npm/dt/nodeauth2)
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![NPM version][npm-image]][npm-url]
+[![License:mit](https://img.shields.io/badge/License-mit-blue.svg)](https://www.gnu.org/licenses/mit)
 
  (TSOTP) Time Services based simple one time password genaretor 
  

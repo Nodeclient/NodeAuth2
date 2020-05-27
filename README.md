@@ -1,14 +1,15 @@
 # NodeAuth2 (Alpha 1.0)
-[![NPM version][npm-image]][npm-url]
-[![License:mit](https://img.shields.io/badge/License-mit-blue.svg)](https://www.gnu.org/licenses/mit)
+![npm-image]
+![npm](https://img.shields.io/npm/dt/nodeauth2)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
  (TSOTP) Time Services based simple one time password genaretor 
  
- ### na2 - token generation
+### na2 - token generation
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
 
-### About - na2
+### Features (na2)
 * Fully customizable (Token expiration time , prefix , length , services)
 * Multiple (daytime,nist) service synchronization.
 * Simple algorithm and fast token generation 

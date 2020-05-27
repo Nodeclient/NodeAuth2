@@ -23,7 +23,7 @@
 ```bash
  npm install nodeauth2 --save
 ```
-## Sample Script 
+## Sample (es5) 
 ```js
    /* 
     Expiration Time (Second) Types <number>
@@ -32,7 +32,7 @@
   */
    process.env.TOKEN_LENGTH = "6"   // Token length [123456] Min(4) ~ Max(32)
    process.env.TOKEN_PREFIX = "-" // Custom token prefix (-) (*) (🔑)
-   process.env.TIME_SERVICE = "127.0.0.1 , time.example.com" //daytime services list -> https://tf.nist.gov/tf-cgi/servers.cgi
+   process.env.TIME_SERVICE = "127.0.0.1 , time.example.com" // daytime services -> https://tf.nist.gov/tf-cgi/servers.cgi
 
   const na2 = require('nodeauth2');
   const NodeAuth2 = new na2.default.Authentication(20); // Token Expiration Time 20 sec

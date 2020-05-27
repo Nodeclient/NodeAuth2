@@ -69,23 +69,24 @@ class AuthTimeZones {
             const localtime = new Date().valueOf();
             const Synchronize = (process.env.TIME_SERVICE) ? Array.isArray(String(process.env.TIME_SERVICE).split(",")) ? String(process.env.TIME_SERVICE).replace(/\s/g, "").split(",") : ["127.0.0.1"] : ["127.0.0.1"];
             let PST = yield new PSTYPE(0x64);
-            let Checking = 0, waitOut = 0;
+            let Checking = 0, waitOut = 0, repOut = 0;
             let nSync = setInterval(() => {
                 (isTry) ? PST.SET_PING_SID = 0x82 : ping.connect(0xd, Synchronize[Checking]);
                 if (PST.GET_PING_SID == 0x64) {
-                    isTry = true;
-                    Checking++;
+                    (repOut > Synchronize.length - 1) ? PST.SET_PING_SID = 0x78 : repOut++;
                     ping.on('data', function (data) {
-                        let d = String(data).match(/\d+/g);
-                        const UTCL = new Date();
-                        let UTCR = String(UTCL.getFullYear()).concat("-").concat(d[0x2]).concat("-").concat(d[0x3]).concat("T").concat(d[0x4]).concat(":").concat(d[0x5]).concat(":").concat(d[0x6]);
-                        const UTCB = new Date(UTCR).valueOf();
+                        isTry = true;
                         clearInterval(nSync);
                         ping.destroy();
-                        call(100, String(UTCB).length >= 0xa ? String(UTCB).slice(0x0, 0xa) : localtime);
+                        let d = String(data).match(/\d+/g);
+                        const UTCR = String(new Date().getFullYear()).concat("-").concat(d[0x2]).concat("-").concat(d[0x3]).concat("T").concat(d[0x4]).concat(":").concat(d[0x5]).concat(":").concat(d[0x6]).concat("Z");
+                        const UTCB = new Date(UTCR);
+                        call(100, (String(UTCB.getTime()).length >= 0xa) ? String(UTCB.getTime()).slice(0x0, 0xa) : localtime);
                     }).on('error', function (e) {
                         isTry = false;
                         (Checking > Synchronize.length - 1) ? PST.SET_PING_SID = 0x78 : PST.SET_PING_SID = 0x64;
+                        if (Checking < Synchronize.length - 1)
+                            Checking++;
                     });
                 }
                 else if (PST.GET_PING_SID == 0x82) {
@@ -99,6 +100,7 @@ class AuthTimeZones {
                 }
                 else if (PST.GET_PING_SID == 0x78) {
                     Checking = 0;
+                    repOut = 0;
                     clearInterval(nSync);
                     call(120, String(localtime).slice(0x0, 0xa));
                 }

@@ -19,24 +19,27 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+
 /*
     Expiration Time (Second) Types <number>
     Secret Code Types <string>
-    Message : (100 New Token),(101 Already Generated),(102 Expired)
+    Code : (100 New Token),(101 Already Generated),(102 Expired)
 */
-process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)
-process.env.TOKEN_PREFIX = "🔑"; // Custom prefix (-)
-process.env.TIME_SERVICE = "127.0.0.1 , time.nist.gov"; // daytime services
 
+process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)
+process.env.TOKEN_PREFIX = "-"; // Custom prefix (-)
+process.env.TIME_SERVICE = "192.168.1.1 , 127.0.0.1 , time.youradress.com"; // daytime services -> https://tf.nist.gov/tf-cgi/servers.cgi
 const na2 = __importStar(require("../lib/authentication"));
 const NodeAuth2 = new na2.Authentication(20); // Token Expiration Time 20 sec
+
 
 /* GENERATE */
     NodeAuth2.AuthGenerate("this is your secret pass phrase").then(g => {
       console.log("Na2", g);
-    });
+});
+
 /* CHECK */ 
-  NodeAuth2.AuthCheck("this is your secret pass phrase","922339").then(g=>{
+ NodeAuth2.AuthCheck("this is your secret pass phrase","351461").then(g=>{
       console.log("Na2", g);
-  })
+})
 

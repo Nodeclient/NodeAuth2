@@ -1,6 +1,6 @@
 {
   "name": "nodeauth2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Time Services based simple one time password genaretor.",
   "main": "index.js",
   "scripts": {

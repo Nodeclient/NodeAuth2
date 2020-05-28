@@ -25,11 +25,11 @@
 ```
 ## Sample (es5) 
 ```js
-   /* 
-    Expiration Time (Second) Types <number>
-    Secret Code Types <string> 
-    Code : (100 New Token),(101 Already Generated),(102 Expired)
-  */
+ /* 
+  Expiration Time (Second) Types <number>
+  Secret Code Types <string> 
+  Code : (100 New Token),(101 Already Generated),(102 Expired)
+ */
    process.env.TOKEN_LENGTH = "6"   // Token length [123456] Min(4) ~ Max(32)
    process.env.TOKEN_PREFIX = "-" // Custom token prefix (-) (*) (🔑)
    process.env.TIME_SERVICE = "127.0.0.1 , time.example.com" // daytime services -> https://tf.nist.gov/tf-cgi/servers.cgi

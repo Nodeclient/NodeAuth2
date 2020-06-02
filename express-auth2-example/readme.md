@@ -13,8 +13,8 @@
 ## Auth2 Browser Url
 > http://127.0.0.1:3000/login
 
-![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/express-auth2-example/screen_images/login.png)
-![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/express-auth2-example/screen_images/check.png)
+![nodeAuth2 login](https://github.com/Nodeclient/NodeAuth2/raw/master/express-auth2-example/screen_images/login.PNG)
+![nodeAuth2 check](https://github.com/Nodeclient/NodeAuth2/raw/master/express-auth2-example/screen_images/check.PNG)
 
    [npm-image]: https://img.shields.io/npm/v/nodeauth2.svg?style=flat 
    [npm-url]: https://npmjs.org/package/nodeauth2 

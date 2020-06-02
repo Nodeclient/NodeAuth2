@@ -18,7 +18,7 @@
  npm install nodeauth2 --save
 ```
 
-### Auth2 Http Check (Sample-Project)
+### Auth2 Http (Sample-Project)
 > https://github.com/Nodeclient/NodeAuth2/tree/master/express-auth2-example
 
 ## Sample (es5) 

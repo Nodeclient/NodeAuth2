@@ -65,6 +65,7 @@ class Authentication {
     AuthGenerate(SecretKey) {
         const auTZ = new ad.AuthTimeZones;
         auTZ.SET_PING_TIME_OUT = 0x12c;
+        auTZ.SET_CONNECTION = { type: this.conn_type, service: this.conn_adress };
         return new Promise((auRes) => {
             let CALL_AUTH = (ID, TZ_TIME) => {
                 if (!this.AuthMap.get(SecretKey) || false) {

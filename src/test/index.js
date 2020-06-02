@@ -19,13 +19,20 @@ const NodeAuth2 = new na2.Authentication(20); // Token Expiration Time 20 sec
     HTTP = <SINGLE URL> (https,http)
     TCP  = <MULTIPLE ADRESS> (ip,domain)
 */
-//NodeAuth2.http = "http://192.168.2.38:3000/daytime"
-NodeAuth2.tcp = "time.nist.gov, time.example.com , 192.168.2.1";
+NodeAuth2.http = "http://192.168.2.38:3000/api/daytime";
+//NodeAuth2.tcp ="time.nist.gov, time.example.com , 192.168.2.1"
+
 /* GENERATE */
-NodeAuth2.AuthGenerate("this is your secret pass phrase").then(t => {
-    console.log("Na2", t);
-});
+    NodeAuth2.AuthGenerate("this is your secret pass phrase").then(t => {
+        console.log("Na2", t);
+    });
+
 /* CHECK */
-// NodeAuth2.AuthCheck("this is your secret pass phrase","614296").then( t =>{
-//     console.log("Na2", t);
-// });
+    // NodeAuth2.AuthCheck("this is your secret pass phrase","614296").then( t =>{
+    //     console.log("Na2", t);
+    // });
+
+
+/*  Sample Auth2 Project 
+    https://github.com/Nodeclient/NodeAuth2/tree/master/express-auth2-example
+*/

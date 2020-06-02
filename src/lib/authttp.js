@@ -14,8 +14,12 @@ class HttpUltility {
             case "https:":
                 https.get(this.requrl, (resp) => {
                     let data = '';
-                    resp.on('data', (chunk) => { data += chunk; });
-                    resp.on('end', () => { callback(data); });
+                    resp.on('data', (chunk) => {
+                        data += chunk;
+                    });
+                    resp.on('end', () => {
+                        callback(data);
+                    });
                 }).on("error", (err) => {
                     callback(false);
                 });
@@ -23,8 +27,12 @@ class HttpUltility {
             case "http:":
                 http.get(this.requrl, (resp) => {
                     let data = '';
-                    resp.on('data', (chunk) => { data += chunk; });
-                    resp.on('end', () => { callback(data); });
+                    resp.on('data', (chunk) => {
+                        data += chunk;
+                    });
+                    resp.on('end', () => {
+                        callback(data);
+                    });
                 }).on("error", (err) => {
                     callback(false);
                 });

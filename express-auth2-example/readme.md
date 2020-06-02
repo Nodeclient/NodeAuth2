@@ -7,7 +7,7 @@
  git clone https://github.com/Nodeclient/NodeAuth2.git
  cd express-auth2-example
  npm install
- npm run index.js
+ npm run start
 ```
 
 ## Auth2 Browser Url

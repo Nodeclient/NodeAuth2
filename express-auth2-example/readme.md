@@ -10,7 +10,7 @@
  npm run start
 ```
 
-## AuthGenerate Client
+## AuthGenerate client.js
 ```js
 	process.env.TOKEN_LENGTH = "6";
 	process.env.TOKEN_PREFIX = "🔑";

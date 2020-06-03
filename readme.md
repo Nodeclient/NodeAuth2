@@ -19,7 +19,7 @@
 ```
 
 ### Auth2 Http (Sample-Project)
-> https://github.com/Nodeclient/NodeAuth2/tree/master/express-auth2-example
+> https://git.io/JfPx5
 
 ## Sample (es5) 
 ```js

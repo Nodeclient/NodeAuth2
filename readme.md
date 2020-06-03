@@ -10,8 +10,8 @@
 
 ### Features (na2)
 * Fully customizable (Token expiration time , prefix , length , services)
-* Support (http or tcp) service synchronization.
-* Simple algorithm
+* Service synchronization. Supported : (http or tcp)
+* Simple algorithm.
 
 ## Install 
 ```bash

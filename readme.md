@@ -13,6 +13,8 @@
 * Service synchronization. Supported : (http or tcp)
 * Simple algorithm.
 
+```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
+
 ## Install 
 ```bash
  npm install nodeauth2 --save
@@ -44,7 +46,6 @@
 ```
 
 ### Set a time service (type: http or tcp)
-```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
 ```js
 //HTTP = <SINGLE URL> (https,http)
 NodeAuth2.http = "http://192.168.2.1:3000/your-rest-api/daytime"

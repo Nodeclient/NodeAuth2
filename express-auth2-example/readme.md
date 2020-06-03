@@ -23,7 +23,7 @@ NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
 }); 
 ```
 
-## Authentication Check Browser Url
+## Authentication Browser Url
 > http://127.0.0.1:3000/login
 
 ![nodeAuth2 login](https://github.com/Nodeclient/NodeAuth2/raw/master/express-auth2-example/screen_images/login.PNG)

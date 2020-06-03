@@ -32,15 +32,13 @@ app.set('view engine', 'ejs');
 	/* DATABASE SIMULATION */
 		let DB = { mail:"test@example.com",secret:"this is your secret pass phrase" }
 
-	//CHECK TOKEN
+	//PAGE.EJS
 	app.post('/one-time-check', function(req, res) {
 		var user_id = req.body["inputEmail"] ;
 		var token = req.body["inputToken"] ;
 			if(user_id == DB.mail){
-
+				//NA2 CHECK-TOKEN
 				NodeAuth2.AuthCheck(DB.secret,token).then( t =>{
-					console.log(t , DB.secret);
-						//PAGE.EJS
 						res.render('./pages/page.ejs', { user: user_id , data: t } );
 				});
 

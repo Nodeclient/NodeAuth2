@@ -11,20 +11,20 @@ app.set('view engine', 'ejs');
 			extended: true
 	})); 
 
-	//INCLUDE TIME SERVICE
+	//TIME SERVICE
 	const ns = require('daytime-service').default
 	const daytime = new ns.DayTime("NA2");
 	//http://yourhost/api/daytime
 	app.get('/api/daytime', (req, res) => res.send( daytime.GetTime ))
 
-	// NODEAUTH2
+	// NODE-AUTH-2
 	process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)
 	process.env.TOKEN_PREFIX = "-"; // Custom token prefix (-) (*) (🔑)
 	const na2 = require("nodeauth2"); // Import NA2 Module
 	const NodeAuth2 = new na2.default.Authentication(20); // Token Expiration Time 20 sec
 	NodeAuth2.http = "http://127.0.0.1:3000/api/daytime"
 	
-	//LOGIN PAGE
+	//LOGIN.EJS
 	app.get("/login", function(req,res) {
 		res.render('./pages/login.ejs')
 	})
@@ -40,10 +40,12 @@ app.set('view engine', 'ejs');
 
 				NodeAuth2.AuthCheck(DB.secret,token).then( t =>{
 					console.log(t , DB.secret);
+						//PAGE.EJS
 						res.render('./pages/page.ejs', { user: user_id , data: t } );
 				});
 
 			} else{
+				//ERROR RETURN
 				res.send( "User not Found : " + user_id )
 			}
 	});

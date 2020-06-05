@@ -1,7 +1,7 @@
 # NodeAuth2 (Alpha 1.0)
 [![NPM version][npm-image]][npm-url]
 ![npm](https://img.shields.io/npm/dt/nodeauth2)
-[![Try on RunKit](https://badge.runkitcdn.com/mira-db.svg)](https://runkit.com/nodeclient/nodeauth2/1.0.7)
+[![Try on RunKit](https://badge.runkitcdn.com/nodeauth2.svg)](https://runkit.com/nodeclient/nodeauth2/1.0.7)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
  (TSOTP) Time Services based simple one time password genaretor 

@@ -40,10 +40,10 @@
     https://tf.nist.gov/tf-cgi/servers.cgi
 */ 
 
-	process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)  | Type <number> 
-	process.env.TOKEN_PREFIX = "-"; // Custom token prefix (-) (*) (🔑)  | Type <string> 
-	  const na2 = require("nodeauth2"); // Import Auth2 Module
-	  const NodeAuth2 = new na2.default.Authentication(20); // Set new token expiration time (20 second) | Type <number>
+ process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)  | Type <number> 
+ process.env.TOKEN_PREFIX = "-"; // Custom token prefix (-) (*) (🔑)  | Type <string> 
+  const na2 = require("nodeauth2"); // NA2 Module
+  const NodeAuth2 = new na2.default.Authentication(20); // Set new token expiration time (20 second) | Type <number>
 ```
 
 ### Set a time service (type: http or tcp)

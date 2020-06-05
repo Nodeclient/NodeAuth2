@@ -13,7 +13,7 @@
 * A fully customizable generation , you can change the expiration time , prefix , length or time services
 * Supported two different way for synchronization : (http , tcp)
 * Simple algorithm.
-```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
+- ```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
 
 
 ## Install 

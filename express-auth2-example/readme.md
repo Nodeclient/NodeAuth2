@@ -2,6 +2,13 @@
 ![npm-image]
 ![npm](https://img.shields.io/npm/dt/nodeauth2)
 
+## Npm Dependencies
+ express
+ ejs
+ body-parser
+ daytime-service
+ nodeauth2
+
 ## Installation
 ```bash
  git clone https://github.com/Nodeclient/NodeAuth2.git

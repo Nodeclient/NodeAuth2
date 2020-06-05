@@ -68,7 +68,7 @@ NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
 Na2 {
   token_prefix: '524-226',
   token_number: '524226',
-  message: 100,
+  code: 100,
   expiration: '20s'
 }
 ```
@@ -82,8 +82,12 @@ NodeAuth2.AuthCheck("this is your secret pass phrase","524226").then( t =>{
 ``` 
 ### Output :
 ```bash
-Na2 { status: true, auth: '524226', message: 'Authentication (100):Success' }
-
+Na2 {
+  status: true,
+  auth: '524226',
+  code: 100,
+  message: 'Authentication : Success'
+}
 ```
 
  > Build            : Node.Js , Typescript, (es5,6)

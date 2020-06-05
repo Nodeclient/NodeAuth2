@@ -11,7 +11,7 @@
 
 ### Features (na2)
 * Fully customizable (Token expiration time , prefix , length , services)
-* Service synchronization. Supported : (http or tcp)
+* Supported two different way for synchronization : (http , tcp)
 * Simple algorithm.
 
 ```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```

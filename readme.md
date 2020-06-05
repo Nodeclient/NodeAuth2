@@ -58,7 +58,7 @@ NodeAuth2.tcp ="time.example.gov, time.example.com , 192.168.2.1"
 
 #### Generate one-time token
 ```js
-/* GENERATE  (Return Type <Json.Objcet>) */ 
+/* GENERATE  (Return Type <Json.Object>) */ 
 NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
   console.log("Na2", t);
 }); 
@@ -75,7 +75,7 @@ Na2 {
 
 #### Check one-time token 
 ```js
-/* CHECK  (Return Type <Json.Objcet>) */       
+/* CHECK  (Return Type <Json.Object>) */       
 NodeAuth2.AuthCheck("this is your secret pass phrase","524226").then( t =>{
   console.log("Na2", t);
 });

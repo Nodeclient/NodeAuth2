@@ -4,7 +4,7 @@
 [![Try on RunKit](https://badge.runkitcdn.com/nodeauth2.svg)](https://runkit.com/nodeclient/nodeauth2/1.0.7)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
- (TSOTP) Time Services based simple one time password genaretor 
+ (TSOTP) Time Services based simple one-time password genaretor 
  
 ### na2 - token generation
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)

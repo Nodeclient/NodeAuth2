@@ -24,7 +24,7 @@
 ### Authentication (Sample-Http-Project)
 > https://git.io/JfPx5
 
-## Authentication (Token checking & generation) 
+### Auth Token (checking & generation) 
 ```js
 /* 
     Expiration Time (Second) Types <number>

@@ -21,7 +21,7 @@
  npm install nodeauth2 --save
 ```
 
-### Auth2 Http (Sample-Project)
+### Authentication (Sample-Http-Project)
 > https://git.io/JfPx5
 
 ## Sample (es5) 

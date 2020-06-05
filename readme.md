@@ -27,9 +27,9 @@
 ### Auth Token (checking & generation) 
 ```js
 /* 
-    Expiration Time (Second) Types <number>
-    SecretKey  Types <string> 
-    Gen-Code : (100 New Token),(101 Already Generated),(102 Expired)
+   STATUS MESSAGES
+     AuthCheck      : (100 = time service success),(120 =  time service failed)
+     AuthGenerate   : (100 =  New),(101 = Already Generated),(102 = Expired)
 */
 
 /* NodeAuth2 DayTime Service (Npm Package) tcp,http support
@@ -40,25 +40,25 @@
     https://tf.nist.gov/tf-cgi/servers.cgi
 */ 
 
-	process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)
-	process.env.TOKEN_PREFIX = "-"; // Custom token prefix (-) (*) (🔑)
+	process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)  | Type <number> 
+	process.env.TOKEN_PREFIX = "-"; // Custom token prefix (-) (*) (🔑)  | Type <string> 
 	  const na2 = require("nodeauth2"); // Import Auth2 Module
-	  const NodeAuth2 = new na2.default.Authentication(20); // Set new token expiration time (20 second)
+	  const NodeAuth2 = new na2.default.Authentication(20); // Set new token expiration time (20 second) | Type <number>
 ```
 
 ### Set a time service (type: http or tcp)
 ```js
-//HTTP = <SINGLE URL> (https,http)
+//HTTP = <SINGLE URL> (https,http)  | Type <string> 
 NodeAuth2.http = "http://192.168.2.1:3000/your-rest-api/daytime"
 ```
 ```js
-//TCP  = <MULTIPLE ADRESS> (ip,domain)
-NodeAuth2.tcp ="time.example.gov, time.example.com , 192.168.2.1"
+//TCP  = <MULTIPLE ADRESS> (ip,domain) | Type <string> 
+NodeAuth2.tcp ="time.example.gov, time.example.com , 192.168.2.1" 
 ```
 
 #### Generate one-time token
 ```js
-/* GENERATE */
+/* GENERATE  (Return Type <Json.Objcet>) */ 
 NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
   console.log("Na2", t);
 }); 
@@ -75,7 +75,7 @@ Na2 {
 
 #### Check one-time token 
 ```js
-/* CHECK */       
+/* CHECK  (Return Type <Json.Objcet>) */       
 NodeAuth2.AuthCheck("this is your secret pass phrase","524226").then( t =>{
   console.log("Na2", t);
 });

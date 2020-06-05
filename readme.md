@@ -2,11 +2,10 @@
 [![NPM version][npm-image]][npm-url]
 ![npm](https://img.shields.io/npm/dt/nodeauth2)
 [![Try on RunKit](https://badge.runkitcdn.com/nodeauth2.svg)](https://runkit.com/nodeclient/nodeauth2/1.0.7)
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![License: LGPL v3](https://img.shields.io/badge/License-MIT-red.svg)](https://en.wikipedia.org/wiki/MIT_License)
 
  (TSOTP) Time Services based simple one-time password genaretor 
  
-### NA2 - flowchart
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
 ### Features (na2)
@@ -21,7 +20,7 @@
  npm install nodeauth2 --save
 ```
 
-### Authentication (Sample-Http-Project)
+### Auth (Sample-Http-Project)
 > https://git.io/JfPx5
 
 ### Auth Token (checking & generation) 

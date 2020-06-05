@@ -9,11 +9,10 @@
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
 ### Features (na2)
-* A fully customizable generation , you can change the expiration time , prefix , length or time services
+* A fully customizable , you can change the expiration time , prefix , length or time services
 * Supported two different way for synchronization : (http , tcp)
 * Simple algorithm.
 - ```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
-
 
 ## Install 
 ```bash

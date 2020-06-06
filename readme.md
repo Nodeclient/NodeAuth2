@@ -10,7 +10,7 @@
 
 ### Features (na2)
 * A fully customizable , can change the expiration time , prefix , token length or time services
-* Supported two different way for synchronization (http , tcp)
+* Supports auth synchronization with (http or tcp) type a time service. If service connection gonna be failing then na2 sync your local standard time (code: 120)
 * Simple algorithm.
 
 ## Install 

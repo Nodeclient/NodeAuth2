@@ -11,7 +11,7 @@
 ### Features (na2)
 * A fully customizable , can change the expiration time , prefix , token length or can use your own time service settings.
 * Supports auth synchronization with (http or tcp) type a time service. "If service connection gonna be failing then (na2) synched with your local time" (code: 120)
-* Of course open-source, you can easy changed anything on this project because (na2) not using the otplib algorithm , unique and very simple a token generator.
+* Of course open-source, you can easy changed anything on this project because (na2) not using the otplib algorithm , unique and very simple a time service based token generator.
 
 ## Install 
 ```bash

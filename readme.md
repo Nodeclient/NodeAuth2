@@ -12,7 +12,6 @@
 * A fully customizable , can change the expiration time , prefix , token length or time services
 * Supported two different way for synchronization (http , tcp)
 * Simple algorithm.
-- ```SERVICE-TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
 
 ## Install 
 ```bash
@@ -32,6 +31,7 @@
 
 /* NodeAuth2 DayTime Service (Npm Package) tcp,http support
     https://www.npmjs.com/package/daytime-service
+    TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2)
 */ 
 
 /* Nist DayTime Services 

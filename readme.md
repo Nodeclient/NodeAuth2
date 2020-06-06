@@ -30,7 +30,7 @@
 
 /* TIME SERVICE (Npm Package)
   https://www.npmjs.com/package/daytime-service
-  TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2)
+  TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) , also supports nist services
 */ 
 
  process.env.TOKEN_LENGTH = "6"; // Token length Min(4) ~ Max(32)  | Type <number> 

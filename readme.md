@@ -9,17 +9,17 @@
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
 ### Features (na2)
-* A fully customizable , you can change the expiration time , prefix , length or time services
-* Supported two different way for synchronization : (http , tcp)
+* A fully customizable , can change the expiration time , prefix , length or time services
+* Supported two different way for synchronization (http , tcp)
 * Simple algorithm.
-- ```TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
+- ```SERVICE-TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) *```
 
 ## Install 
 ```bash
  npm install nodeauth2 --save
 ```
 
-### Auth (Sample-Http-Project)
+### Authentication (Sample-Http-Project)
 > https://git.io/JfPx5
 
 ### Auth Token (checking & generation) 
@@ -54,7 +54,7 @@ NodeAuth2.http = "http://192.168.2.1:3000/your-rest-api/daytime"
 NodeAuth2.tcp ="time.example.gov, time.example.com , 192.168.2.1" 
 ```
 
-#### Generate one-time token
+#### Generate funciton
 ```js
 /* GENERATE  (Return Type <Json.Object>) */ 
 NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
@@ -71,7 +71,7 @@ Na2 {
 }
 ```
 
-#### Check one-time token 
+#### Check funciton
 ```js
 /* CHECK  (Return Type <Json.Object>) */       
 NodeAuth2.AuthCheck("this is your secret pass phrase","524226").then( t =>{

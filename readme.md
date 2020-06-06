@@ -23,19 +23,14 @@
 
 ### Auth Token (checking & generating) 
 ```js
-/* 
-   STATUS
-     AuthCheck      : (100 = time service success),(120 =  time service failed)
-     AuthGenerate   : (100 =  New),(101 = Already Generated),(102 = Expired)
+/* STATUS
+  AuthCheck      : (100 = time service success),(120 =  time service failed)
+  AuthGenerate   : (100 =  New),(101 = Already Generated),(102 = Expired)
 */
 
-/* NodeAuth2 DayTime Service (Npm Package) tcp,http support
-    https://www.npmjs.com/package/daytime-service
-    TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2)
-*/ 
-
-/* Nist DayTime Services 
-    https://tf.nist.gov/tf-cgi/servers.cgi
+/* TIME SERVICE (Npm Package)
+  https://www.npmjs.com/package/daytime-service
+  TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2)
 */ 
 
  process.env.TOKEN_LENGTH = "6"; // Token length Min(4) ~ Max(32)  | Type <number> 

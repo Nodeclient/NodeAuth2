@@ -1,38 +1,33 @@
 "use strict";
 /*
-    Expiration Time (Second) Types <number>
-    SecretKey  Types <string>
-    Gen-Code : (100 New Token),(101 Already Generated),(102 Expired)
+    STATUS MESSAGES
+        AuthCheck      : (100 = time service success),(120 =  time service failed)
+        AuthGenerate   : (100 =  New),(101 = Already Generated),(102 = Expired)
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-/* NodeAuth2 Time Service (Npm Package)
-    https://www.npmjs.com/package/daytime-service
+/* STATUS
+  AuthCheck      : (100 = time service success),(120 =  time service failed)
+  AuthGenerate   : (100 =  New),(101 = Already Generated),(102 = Expired)
 */
-/* Nist DayTime Services
-    https://tf.nist.gov/tf-cgi/servers.cgi
-*/
-process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32)
-process.env.TOKEN_PREFIX = "-"; // Custom token prefix (-) (*) (🔑)
-const na2 = require("../lib/authentication"); // Import NA2 Module
-const NodeAuth2 = new na2.Authentication(20); // Token Expiration Time 20 sec
+/* TIME SERVICE (Npm Package)
+  https://www.npmjs.com/package/daytime-service
+  TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2) , also supports nist services
+*/ 
+process.env.TOKEN_LENGTH = "6"; // Token length [123456] Min(4) ~ Max(32) | <number> 
+process.env.TOKEN_PREFIX = "🔑"; // Custom token prefix (-) (*) (🔑) | <string> 
+const na2 = require("../lib/authentication"); // NA2 Module
+const NodeAuth2 = new na2.Authentication(20); // Token Expiration Time 20 sec | <number> 
 /* SET TIME SERVICE
-    HTTP = <SINGLE URL> (https,http)
-    TCP  = <MULTIPLE ADRESS> (ip,domain)
+    HTTP = <SINGLE URL> (https,http)  | <string>
+    TCP  = <MULTIPLE ADRESS> (ip,domain) | <string>
 */
-NodeAuth2.http = "http://192.168.2.38:3000/api/daytime";
+NodeAuth2.http = "http://127.0.0.1:3000/api/daytime";
 //NodeAuth2.tcp ="time.nist.gov, time.example.com , 192.168.2.1"
-
 /* GENERATE */
-    NodeAuth2.AuthGenerate("this is your secret pass phrase").then(t => {
-        console.log("Na2", t);
-    });
-
+NodeAuth2.AuthGenerate("this is your secret pass phrase").then(t => {
+    console.log("na2", t);
+});
 /* CHECK */
-    // NodeAuth2.AuthCheck("this is your secret pass phrase","614296").then( t =>{
-    //     console.log("Na2", t);
-    // });
-
-
-/*  Sample Auth2 Project 
-    https://github.com/Nodeclient/NodeAuth2/tree/master/express-auth2-example
-*/
+// NodeAuth2.AuthCheck("this is your secret pass phrase","162359").then( t =>{
+//     console.log("Na2", t);
+// });

@@ -15,7 +15,7 @@
   },
   "keywords": [
     "auth",
-    "custom otp",
+    "tsotp",
     "password",
     "generate"
   ],

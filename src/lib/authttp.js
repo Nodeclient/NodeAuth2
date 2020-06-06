@@ -9,7 +9,7 @@ class HttpUltility {
         this.requrl = Http_Url;
     }
     GetUri(callback) {
-        const ap = String(url.parse(this.requrl).protocol);
+        const ap = String(url.parse(this.requrl).protocol) || "http:";
         switch (ap) {
             case "https:":
                 https.get(this.requrl, (resp) => {

@@ -8,7 +8,7 @@ class Authentication {
         this.ExTime = Expiration;
         this.AuthMap = new Map();
         this.conn_type = "tcp";
-        this.conn_adress = "127.0.0.1";
+        this.conn_adress = "0.0.0.0";
     }
     set http(cLink) {
         this.conn_type = "http";
@@ -39,7 +39,8 @@ class Authentication {
                 res({
                     status: authStatus,
                     auth: AuthNumber,
-                    message: "Authentication (" + ID + "):" + (authStatus == true ? "Success" : "Failed")
+                    code: ID,
+                    message: "Authentication : " + (authStatus == true ? "Success" : "Failed")
                 });
             });
         });
@@ -59,7 +60,7 @@ class Authentication {
                 auRes({
                     token_prefix: newACT.AuthGen.Prefix,
                     token_number: newACT.AuthGen.Number,
-                    message: ID,
+                    code: ID,
                     expiration: TimeLeft + "s"
                 });
             });

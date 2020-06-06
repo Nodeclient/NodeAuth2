@@ -10,7 +10,7 @@ class AutHash {
     get data() {
         return String(crypto.createHash('MD5').update(this.Origin).digest("hex")).toLowerCase();
     }
-    get cdb() {
+    get num_db() {
         return {
             "a": 0x1,
             "b": 0x2,
@@ -86,7 +86,7 @@ class AuthCrypt extends AuthSetting {
         let _m = new AutHash(txc);
         let _h = [];
         for (const e in _m.data) {
-            _h.push(_m.cdb[_m.data[e]]);
+            _h.push(_m.num_db[_m.data[e]]);
         }
         const gn = _h.join("");
         const px = String(gn).substring(0, 0x3).concat(this.getPrefix).concat(String(gn).substring(0x3, this.getLength));

@@ -24,8 +24,8 @@
 ### Auth Token (checking & generating) 
 ```js
 /* STATUS
-  AuthCheck      : (100 = time service success),(120 =  time service failed)
-  AuthGenerate   : (100 =  New),(101 = Already Generated),(102 = Expired)
+    AuthCheck      : (100 = time service success , 120 =  time service failed)
+    AuthGenerate   : (100 =  new token , 101 = already generated , 102 = token expired )
 */
 
 /* TIME SERVICE (Npm Package)

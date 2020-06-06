@@ -22,7 +22,7 @@
 ### Authentication (Sample-Http-Project)
 > https://git.io/JfPx5
 
-### Auth Token (checking & generation) 
+### Auth Token (checking & generating) 
 ```js
 /* 
    STATUS MESSAGES

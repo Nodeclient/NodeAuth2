@@ -25,7 +25,7 @@
 ### Auth Token (checking & generating) 
 ```js
 /* 
-   STATUS MESSAGES
+   STATUS
      AuthCheck      : (100 = time service success),(120 =  time service failed)
      AuthGenerate   : (100 =  New),(101 = Already Generated),(102 = Expired)
 */

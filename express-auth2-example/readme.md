@@ -1,4 +1,4 @@
-# NodeAuth2 (Sample)
+# NodeAuth2 (Sample-Project)
 ![npm-image]
 ![npm](https://img.shields.io/npm/dt/nodeauth2)
 

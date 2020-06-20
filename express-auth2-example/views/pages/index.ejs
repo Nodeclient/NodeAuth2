@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/a11y-dark.min.css">
+    
+  </head>
+<style>
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+</style>
+  <body>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Example: Your Auth Client</h1>
+      <p class="lead">
+      <p>install</p>
+       <pre><code  class="Bash" >npm install nodeauth2</code></pre>
+       <pre><code  class="Text" >creat a new file "auth.js"</code></pre>
+      <pre></p>
+<p>auth.js
+<code  class="JavaScript" >
+process.env.TOKEN_LENGTH = "6"   // Token length [123456] Min(4) ~ Max(32)
+process.env.TOKEN_PREFIX = "🔑" // Custom prefix (-)
+  const na2 = require('nodeauth2');
+  const NodeAuth2 = new na2.default.Authentication(20);
+  NodeAuth2.http = "https://dsb--leozacharry.repl.co/api/daytime"
+/* GENERATE */
+NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
+    console.log("Na2", t);
+});
+</code>
+<p>Start Script</p><pre><code  class="Bash" >node auth.js</code></pre>
+</pre>
+      <p>Login & Authentication : <a href="/login"><span class="badge badge-primary">now you can test the nodeauth2.</span></p></p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted"><a href="https://getbootstrap.com/">Build fast, responsive sites with Bootstrap</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" crossorigin="anonymous"></script><script>hljs.initHighlightingOnLoad();</script>

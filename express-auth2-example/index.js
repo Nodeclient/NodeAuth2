@@ -24,6 +24,11 @@ app.set('view engine', 'ejs');
 	const NodeAuth2 = new na2.default.Authentication(20); // Token Expiration Time 20 sec
 	NodeAuth2.http = "http://127.0.0.1:3000/api/daytime"
 	
+	//INDEX.EJS
+	app.get("/", function(req,res) {
+		res.render('./pages/index')
+	})
+
 	//LOGIN.EJS
 	app.get("/login", function(req,res) {
 		res.render('./pages/login.ejs')

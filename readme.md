@@ -4,7 +4,7 @@
 [![Try on RunKit](https://badge.runkitcdn.com/nodeauth2.svg)](https://runkit.com/nodeclient/nodeauth2/1.0.7)
 [![License: LGPL v3](https://img.shields.io/badge/License-MIT-red.svg)](https://en.wikipedia.org/wiki/MIT_License)
 
- (TSOTP) Time Services based simple one-time password genaretor 
+ (TSOTP) Time Services based custom one-time password genaretor 
  
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 

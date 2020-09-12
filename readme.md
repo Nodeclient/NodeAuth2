@@ -8,10 +8,10 @@
  
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
-### Features (na2)
+### NodeAuth
 * A fully customizable , expiration time , prefix , token length.
 * Supports auth synchronization with (http or tcp) type a time service. "If service connection gonna be failing then (na2) synched with your local time" (code: 120)
-* you can easy changed anything on this project because (na2) not using the otplib algorithm , unique and very simple a time service based open-source token generator.
+* na2 unique and very simple a time service based token generator, this package not using the google otplib.
 
 ## Install 
 ```bash

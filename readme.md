@@ -11,7 +11,7 @@
 ### NodeAuth
 * A fully customizable , expiration time , prefix , token length.
 * Supports auth synchronization with (http or tcp) type a time service. "If service connection gonna be failing then (na2) synched with your local time" (code: 120)
-* na2 unique and very simple a time service based token generator, this package not using the google otplib.
+* na2 a very simple time service based token generator, (this package not using the otplib).
 
 ## Install 
 ```bash

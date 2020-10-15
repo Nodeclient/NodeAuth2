@@ -34,7 +34,7 @@
 */ 
 
  process.env.TOKEN_LENGTH = "6"; // Token length Min(4) ~ Max(32)  | Type <number> 
- process.env.TOKEN_PREFIX = "-"; // Custom token prefix (-) (*) (🔑)  | Type <string> 
+ process.env.TOKEN_PREFIX = "🔑"; // Custom token prefix (-) (*) (🔑)  | Type <string> 
   const na2 = require("nodeauth2"); // NA2 Module
   const NodeAuth2 = new na2.default.Authentication(20); // Set new token expiration time (20 second) | Type <number>
 ```
@@ -59,7 +59,7 @@ NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
 ### Output :
 ```bash
 Na2 {
-  token_prefix: '524-226',
+  token_prefix: '524🔑226',
   token_number: '524226',
   code: 100,
   expiration: '20s'

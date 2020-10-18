@@ -3,7 +3,7 @@
 ![npm](https://img.shields.io/npm/dt/nodeauth2)
 
 ## Online Sample
-https://dsb--leozacharry.repl.co
+https://na2.leozacharry.repl.co/
 
 ## Npm Dependencies
 - express

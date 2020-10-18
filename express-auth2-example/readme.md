@@ -12,7 +12,7 @@ https://dsb--leozacharry.repl.co
 - daytime-service
 - nodeauth2
 
-## Installation
+## Web Service Installation
 ```bash
  git clone https://github.com/Nodeclient/NodeAuth2.git
  cd express-auth2-example
@@ -20,7 +20,7 @@ https://dsb--leozacharry.repl.co
  npm run start
 ```
 
-## AuthGenerate (client.js)
+## Auth (client.js)
 ```js
      process.env.TOKEN_LENGTH = "6";
      process.env.TOKEN_PREFIX = "🔑";

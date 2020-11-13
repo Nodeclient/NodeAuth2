@@ -39,7 +39,7 @@
   const NodeAuth2 = new na2.default.Authentication(20); // Set new token expiration time (20 second) | Type <number>
 ```
 
-### Set a time service (type: http or tcp)
+### Setting time service (option: http or tcp)
 ```js
 //HTTP = <SINGLE URL> (https,http)  | Type <string> 
 NodeAuth2.http = "http://192.168.2.1:3000/your-rest-api/daytime"

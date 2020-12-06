@@ -32,7 +32,7 @@ NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
   console.log("Token", t);
 }); 
 ```
-## Run Client and generate a number
+## Run client and generate a number
 ```bash
  node client.js
 ```

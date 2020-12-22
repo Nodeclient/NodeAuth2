@@ -10,7 +10,7 @@
 
 ### About (NA2)
 * A fully customizable , expiration time , prefix , token length.
-* very simple a time service based token generator, (this package not using the otp library).
+* very simple a time service based token generator, (this package not using the oauth library).
 * Supports (nist) tcp services. 
 
 ## Install Global

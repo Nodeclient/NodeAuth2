@@ -4,16 +4,19 @@
 [![Try on RunKit](https://badge.runkitcdn.com/nodeauth2.svg)](https://runkit.com/nodeclient/nodeauth2/1.0.7)
 [![License: LGPL v3](https://img.shields.io/badge/License-MIT-red.svg)](https://en.wikipedia.org/wiki/MIT_License)
 
- (TSOTP) Time Services based custom one-time password genaretor 
+ (TSOTP) Time service based custom one-time token/password genaretor 
  
 ![nodeAuth2](https://github.com/Nodeclient/NodeAuth2/raw/master/docs/images/flow.png)
 
-### About (NA2)
-* A fully customizable , expiration time , prefix , token length.
-* very simple a time service based token generator, (this package not using the oauth library).
-* Supports (nist) tcp services. 
+* can use your own custom settings for a password or tokens generating like (expiration time , prefix and token length) 
+* this package not using the HOTP/TOTP/OTP librarys
+* Auth time format supports nist time services , text based or you can use the "daytime-service" npm package
 
-## Install Global
+/* NodeAuth2 Time Formatter (Npm Package)
+    https://www.npmjs.com/package/daytime-service
+*/ 
+
+## Global
 ```bash
  npm install nodeauth2 -g
 ```
@@ -23,38 +26,42 @@
 
 ### Auth Token (checking & generating) 
 ```js
-/* STATUS
-    AuthCheck      : (100 = time service success , 120 =  time service failed)
-    AuthGenerate   : (100 =  new token , 101 = already generated , 102 = token expired )
-*/
+    /* 
+        STATUS MESSAGES
+            AuthCheck      : (100 = time service success),(120 =  time service failed)
+            AuthGenerate   : (100 =  New),(101 = Already Generated),(102 = Expired)
+    */
 
-/* TIME SERVICE (Npm Package)
-  https://www.npmjs.com/package/daytime-service
-  TIME FORMAT : MJD YY-MM-DD HH:MM:SS MS UTC(NA2)
-*/ 
+    process.env.TOKEN_LENGTH = "6"   // Token length Min(4) ~ Max(32) | <number> 
+    process.env.TOKEN_PREFIX = "🔑"  // Custom prefix (-) (*) (🔑) | <string> 
 
- process.env.TOKEN_LENGTH = "6"; // Token length Min(4) ~ Max(32)  | Type <number> 
- process.env.TOKEN_PREFIX = "🔑"; // Custom token prefix (-) (*) (🔑)  | Type <string> 
-  const na2 = require("nodeauth2"); // NA2 Module
-  const NodeAuth2 = new na2.default.Authentication(20); // Set new token expiration time (second) | Type <number>
-```
+    import * as na2 from "nodeauth2"; // NodeAuth2 Module
+    const NodeAuth2 = new na2.default.Authentication(20); // Token Expiration Time (Second) | <number> 
 
-### Setting time service (option: http or tcp)
-```js
-//HTTP = <SINGLE URL> (https,http)  | Type <string> 
-NodeAuth2.http = "http://192.168.2.1:3000/your-rest-api/daytime"
-```
-```js
-//TCP  = <MULTIPLE ADRESS> (ip,domain) | Type <string> 
-NodeAuth2.tcp ="time.example.gov, time.example.com , 192.168.2.1" 
-```
+    /*  AUTH DATA TYPES
+        TIME  = <TIME FORMAT> (Text) | <string> 
+        HTTP = <SINGLE URL> (https,http)  | <string> 
+        TCP  = <MULTIPLE ADRESS> (ip,domain) | <string> 
+    */
 
-#### Generate function
-```js
-/* GENERATE  (Return Type <Json>) */ 
-NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
-  console.log("Na2", t);
-}); 
+
+    // ** NIST TCP **
+        NodeAuth2.tcp ="time.nist.gov, time.example.com , 192.168.2.1"
+    // ** TEXT **
+        NodeAuth2.time = "59243 21-01-21 11:12:13 404 UTC(NA2) *"
+    // ** HTTP & HTTPS **
+        NodeAuth2.http = "http://127.0.0.1:3000/api/daytime"
+        NodeAuth2.http = "https://127.0.0.1:3000/api/daytime"
+
+
+    /* GENERATE */
+        NodeAuth2.AuthGenerate("this is your secret pass phrase").then( t => {
+            console.log("First Test", t);
+        }); 
+    /* CHECK */       
+        NodeAuth2.AuthCheck("this is your secret pass phrase","162359").then( t =>{
+            console.log("First Test", t);
+        });
 ```
 ### Output :
 ```bash

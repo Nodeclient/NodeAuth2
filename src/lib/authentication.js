@@ -10,6 +10,10 @@ class Authentication {
         this.conn_type = "tcp";
         this.conn_adress = "0.0.0.0";
     }
+    set time(cString) {
+        this.conn_type = "time";
+        this.conn_adress = cString;
+    }
     set http(cLink) {
         this.conn_type = "http";
         this.conn_adress = cLink;

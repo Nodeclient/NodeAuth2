@@ -65,6 +65,12 @@ class AuthTimeZones {
             let isTry = false;
             const localtime = new Date().valueOf();
             switch (this.GET_CONNECTION.type) {
+                case "time":
+                    let d = String(this.GET_CONNECTION.service).match(/\d+/g);
+                    const UTCR = String(new Date().getFullYear()).concat("-").concat(d[0x2]).concat("-").concat(d[0x3]).concat("T").concat(d[0x4]).concat(":").concat(d[0x5]).concat(":").concat(d[0x6]).concat("Z");
+                    const UTCB = new Date(UTCR);
+                    call(100, String(UTCB.getTime()).slice(0x0, 0xa));
+                    break;
                 case "http":
                     const ht2 = new ht.HttpUltility(this.GET_CONNECTION.service);
                     ht2.GetUri(function (body) {

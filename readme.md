@@ -12,9 +12,9 @@
 * this package not using the HOTP/TOTP/OTP librarys
 * Auth time format supports nist time services , text based or you can use the "daytime-service" npm package
 
-/* NodeAuth2 Time Formatter (Npm Package)
-    https://www.npmjs.com/package/daytime-service
-*/ 
+> NodeAuth2 Time Formatter (Npm Package)
+> https://www.npmjs.com/package/daytime-service
+
 
 ## Global
 ```bash
